@@ -1,0 +1,821 @@
+/* ==========================================
+   CULINA MONDE
+   Premium International Cuisine Website
+========================================== */
+
+:root {
+    --cream: #faf8f3;
+    --paper: #fffefa;
+    --green: #23392a;
+    --dark-green: #1a2c21;
+    --gold: #c5a574;
+    --dark: #28251f;
+    --muted: #837c70;
+    --line: #eae5dc;
+}
+
+
+/* GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    background: var(--cream);
+    font-family: 'DM Sans', Arial, sans-serif;
+    color: var(--dark);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 500;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* ==========================================
+   NAVIGATION BAR
+========================================== */
+
+.navbar {
+    min-height: 85px;
+    padding: 12px 5%;
+    background: var(--paper);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap;
+}
+
+.logo img {
+    width: 58px;
+    height: 58px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #e3d2b6;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    color: var(--green);
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.logo-text strong {
+    font-weight: 600;
+}
+
+.logo-text small {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 8px;
+    letter-spacing: 2px;
+    margin-top: 5px;
+    color: #a28a65;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #554f47;
+    font-size: 12px;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #b19360;
+}
+
+.nav-cta {
+    padding: 12px 19px;
+    background: var(--green);
+    color: white;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.nav-cta:hover {
+    background: #3a5843;
+}
+
+
+/* ==========================================
+   HERO SECTION
+========================================== */
+
+.hero {
+    min-height: 630px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient( 90deg, rgba(15, 16, 10, 0.88) 0%, rgba(18, 21, 13, 0.65) 40%, rgba(23, 22, 17, 0.06) 85%), url('img/hero.jpg') center/cover no-repeat;
+    color: white;
+}
+
+.hero-content {
+    width: min(1200px, 88%);
+    margin: auto;
+    padding: 90px 0;
+}
+
+.subtitle {
+    color: #ae8e57;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.8px;
+    text-transform: uppercase;
+}
+
+.hero .subtitle {
+    color: #e1c087;
+}
+
+.hero h1 {
+    font-size: clamp(46px, 6.5vw, 86px);
+    line-height: 1.08;
+    margin: 23px 0;
+    max-width: 760px;
+    letter-spacing: -1.5px;
+}
+
+.hero h1 em {
+    font-weight: 400;
+    color: #e6c998;
+}
+
+.hero-description {
+    font-size: 14px;
+    line-height: 1.95;
+    max-width: 430px;
+    color: #eee8d9;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.hero-btn,
+.hero-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 25px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 700;
+    transition: 0.25s;
+}
+
+.hero-btn {
+    background: #d5b783;
+    color: #2a281e;
+}
+
+.hero-btn:hover {
+    background: #e8c999;
+    transform: translateY(-2px);
+}
+
+.hero-outline {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.hero-outline:hover {
+    background: rgba(255, 255, 255, 0.13);
+}
+
+
+/* ==========================================
+   GENERAL SECTIONS
+========================================== */
+
+.section {
+    padding: 90px 6%;
+}
+
+.section h2 {
+    font-size: clamp(30px, 3.8vw, 45px);
+    line-height: 1.2;
+    color: var(--dark);
+}
+
+.section-description {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.9;
+    margin-top: 10px;
+}
+
+
+/* ==========================================
+   CUISINE CATEGORIES
+========================================== */
+
+.cuisines {
+    background: #fffdfa;
+    text-align: center;
+    padding-top: 70px;
+    padding-bottom: 75px;
+    border-bottom: 1px solid var(--line);
+}
+
+.cuisines h2 {
+    margin: 12px 0;
+}
+
+.cuisine-grid {
+    max-width: 1150px;
+    margin: 40px auto 0;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.cuisine-item {
+    background: var(--paper);
+    padding: 12px 12px 22px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    transition: 0.25s;
+}
+
+.cuisine-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+.cuisine-item img {
+    width: 100%;
+    height: 125px;
+    object-fit: cover;
+    border-radius: 3px;
+    display: block;
+}
+
+.cuisine-item p {
+    margin-top: 16px;
+    color: var(--green);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 1.2px;
+}
+
+
+/* ==========================================
+   SIGNATURE DISHES
+========================================== */
+
+.menu {
+    max-width: 1450px;
+    margin: auto;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 32px;
+}
+
+.section-heading h2 {
+    margin-top: 11px;
+}
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.food-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    overflow: hidden;
+    transition: 0.25s;
+}
+
+.food-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(30, 30, 20, 0.1);
+}
+
+.food-card img {
+    display: block;
+    width: 100%;
+    height: 245px;
+    object-fit: cover;
+}
+
+.food-info {
+    padding: 22px;
+}
+
+.food-label {
+    font-size: 10px;
+    letter-spacing: 1.4px;
+    font-weight: 700;
+    color: #af8e5d;
+}
+
+.food-info h3 {
+    font-size: 22px;
+    margin: 9px 0;
+    color: var(--green);
+}
+
+.food-info p {
+    font-size: 12px;
+    line-height: 1.9;
+    color: var(--muted);
+}
+
+
+/* ==========================================
+   ABOUT / OUR STORY
+========================================== */
+
+.about-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #f0eee6;
+}
+
+.about-image {
+    position: relative;
+    min-height: 500px;
+    overflow: hidden;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.about-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient( 0deg, rgba(0, 0, 0, 0.45), transparent 65%);
+}
+
+.about-image-text {
+    position: absolute;
+    left: 8%;
+    bottom: 9%;
+    z-index: 2;
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(29px, 3vw, 47px);
+    line-height: 1.15;
+}
+
+.about-content {
+    padding: 70px 9%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.about-content h2 {
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.2;
+    margin: 14px 0 25px;
+    color: var(--green);
+}
+
+.about-content h2 em {
+    color: #ab8e60;
+    font-weight: 400;
+}
+
+.about-content>p:not(.subtitle) {
+    color: #6d695f;
+    font-size: 13px;
+    line-height: 1.95;
+    margin-bottom: 16px;
+}
+
+.about-btn {
+    display: inline-block;
+    background: var(--green);
+    color: white;
+    padding: 13px 24px;
+    border-radius: 3px;
+    margin-top: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.about-btn:hover {
+    background: #3a5843;
+}
+
+
+/* ==========================================
+   RESTAURANT DIRECTORY
+========================================== */
+
+.restaurants {
+    background: #fffefa;
+    text-align: center;
+}
+
+.restaurants h2 {
+    margin: 12px 0;
+}
+
+.restaurants>.section-description {
+    margin-bottom: 35px;
+}
+
+.table-controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    max-width: 1280px;
+    margin: 0 auto 20px;
+}
+
+.table-controls input {
+    width: 100%;
+    max-width: 470px;
+    padding: 14px 17px;
+    background: #faf9f6;
+    border: 1px solid #ddd8cf;
+    border-radius: 3px;
+    color: var(--dark);
+    font-size: 12px;
+    outline: none;
+}
+
+.table-controls input:focus {
+    border-color: var(--gold);
+}
+
+#addButton {
+    padding: 14px 25px;
+    background: var(--green);
+    color: white;
+    border: 0;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+#addButton:hover {
+    background: #3a5843;
+}
+
+.table-wrapper {
+    max-width: 1280px;
+    margin: auto;
+    background: white;
+    border: 1px solid var(--line);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    white-space: nowrap;
+}
+
+thead {
+    background: var(--green);
+    color: white;
+}
+
+th,
+td {
+    padding: 18px 16px;
+    border-bottom: 1px solid #eeeae4;
+}
+
+th {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+td {
+    font-size: 12px;
+    color: #655f54;
+}
+
+tbody tr:nth-child(even) {
+    background: #fbfaf7;
+}
+
+tbody tr:hover {
+    background: #f2f1eb;
+}
+
+.loading-cell {
+    text-align: center;
+    padding: 45px;
+}
+
+.action-button {
+    background: #eef1e9;
+    color: var(--green);
+    border: 1px solid #dce4d9;
+    padding: 8px 13px;
+    margin: 2px;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 11px;
+}
+
+.action-button.delete {
+    background: #fbefeb;
+    border-color: #f1d8d2;
+    color: #ad5046;
+}
+
+.action-button:hover {
+    opacity: 0.8;
+}
+
+
+/* ==========================================
+   ADD / EDIT RESTAURANT MODAL
+========================================== */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: rgba(11, 19, 13, 0.72);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 470px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #fffdfa;
+    border: 1px solid #dfd7ca;
+    border-radius: 5px;
+    padding: 37px;
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+    font-size: 30px;
+    margin-bottom: 25px;
+    color: var(--green);
+}
+
+.close-btn {
+    float: right;
+    background: none;
+    border: none;
+    color: #80796e;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+#restaurantForm label {
+    display: block;
+    text-align: left;
+    font-size: 11px;
+    color: #3c473c;
+    font-weight: 700;
+    margin: 15px 0 7px;
+}
+
+#restaurantForm input {
+    width: 100%;
+    padding: 13px;
+    background: white;
+    border: 1px solid #ddd8cf;
+    border-radius: 3px;
+    outline: none;
+}
+
+#restaurantForm input:focus {
+    border-color: var(--gold);
+}
+
+.save-btn {
+    width: 100%;
+    padding: 14px;
+    margin-top: 26px;
+    background: var(--green);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.save-btn:hover {
+    background: #3a5843;
+}
+
+
+/* ==========================================
+   FOOTER WITH LOGO
+========================================== */
+
+.footer {
+    background: var(--dark-green);
+    text-align: center;
+    padding: 65px 20px 35px;
+    color: white;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+}
+
+.footer-brand img {
+    width: 105px;
+    height: 105px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #c5a574;
+}
+
+.footer-brand h2 {
+    font-size: 30px;
+    font-weight: 500;
+    color: #dfc294;
+}
+
+.footer p {
+    font-size: 11px;
+    letter-spacing: 0.4px;
+    color: #bbc7b7;
+    margin: 9px 0;
+}
+
+.footer-divider {
+    width: 100%;
+    max-width: 750px;
+    height: 1px;
+    background: #475748;
+    margin: 30px auto;
+}
+
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width: 1100px) {
+    .navbar {
+        gap: 15px;
+    }
+    .nav-links {
+        gap: 14px;
+    }
+    .nav-links a {
+        font-size: 11px;
+    }
+    .cuisine-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 800px) {
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 16px 5%;
+    }
+    .nav-links {
+        order: 3;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .hero {
+        min-height: 550px;
+    }
+    .food-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .about-section {
+        grid-template-columns: 1fr;
+    }
+    .about-image {
+        min-height: 330px;
+        max-height: 400px;
+    }
+    .about-content {
+        padding: 60px 7%;
+    }
+}
+
+@media (max-width: 500px) {
+    .section {
+        padding: 65px 5%;
+    }
+    .logo img {
+        width: 45px;
+        height: 45px;
+    }
+    .logo-text {
+        font-size: 19px;
+    }
+    .hero h1 {
+        font-size: 45px;
+    }
+    .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .cuisine-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .food-grid {
+        grid-template-columns: 1fr;
+    }
+    .food-card img {
+        height: 260px;
+    }
+    .table-controls {
+        flex-direction: column;
+    }
+    .table-controls input {
+        max-width: none;
+    }
+    .modal-content {
+        padding: 24px;
+    }
+    .footer-brand img {
+        width: 85px;
+        height: 85px;
+    }
+}
